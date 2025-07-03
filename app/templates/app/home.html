@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+</head>
+<body>
+   
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'app:home' %}">Home</a></li>
+                <li><a href="">About</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'app:profile'%}">{{request.user.username}}</a></li>
+                <li>
+                    <form action="{% url 'authentication:signout'%}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Signout</button>
+                    </form>
+                </li>
+                {% else %}
+                 <li><a href="{% url 'authentication:signin'%}">SignIn</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+     {% block body%}
+    <main>
+        <section class="blog-posts">
+            <h1>Recent Posts</h1>
+            {% for post in posts %}
+            <article class="post">
+            <h2><a href="{% url 'app:detail' post.pk%}">{{post.post_title}}</a></h2>
+            <p>{{post.post_desc|truncatewords:10 }}</p>
+            <p>{{post.date_posted}}</p>
+            <p>{{post.posted_by}} made this post</p>
+            </article>
+           {% endfor %}
+
+        </section>
+        <aside class="sidebar">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="">Category 1</a></li>
+                <li><a href="">Category 2</a></li>
+            </ul>
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2023 My Blog</p>
+    </footer>
+
+    {% endblock %}
+</body>
+</html>

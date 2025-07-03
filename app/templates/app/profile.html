@@ -1,0 +1,23 @@
+{% extends 'app/home.html' %}
+
+{% block body %}
+<body>
+    <main>
+        <section class="profile">
+            <div class="profile-picture">
+               <img src="{{ profile.profile_pic.url }}" alt="profile picture" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 2px solid #ccc;">
+            </div>
+            <div class="profile-info">
+                <h1>{{user.username}}</h1>
+                <p>{{user.email}}</p>
+                <p>{{profile.bio}}</p>
+                
+                <ul class="social-links">
+                    <li><a href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+{% endblock %}
