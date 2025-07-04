@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY_BLOGAPP')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-
+ALLOWED_HOSTS = ['blog-app-omega-green.vercel.app',]
 
 
 # Application definition
