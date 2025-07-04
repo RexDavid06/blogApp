@@ -1,0 +1,205 @@
+body {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f8fb;
+    color: #222;
+}
+
+header {
+    background: linear-gradient(90deg, #4F8CFF 0%, #235390 100%);
+    color: #fff;
+    padding: 1.3em 0.5em;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(79,140,255, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-right: 22px;
+    position: relative;
+}
+
+header nav ul li:last-child {
+    margin-right: 0;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 5px;
+    transition: background 0.2s, color 0.2s;
+}
+
+header nav a:hover {
+    background: rgba(255,255,255,0.15);
+    color: #e9e9e9;
+}
+
+header form button {
+    background: #2954a8;
+    color: #fff;
+    border: none;
+    padding: 7px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+header form button:hover {
+    background: #18396c;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    padding: 2em 6vw;
+    gap: 2em;
+    min-height: 75vh;
+}
+
+.blog-posts {
+    flex-basis: 70%;
+    max-width: 800px;
+}
+
+.blog-posts h1 {
+    font-size: 2.2em;
+    margin-bottom: 0.8em;
+    color: #235390;
+}
+
+.post {
+    background: #fff;
+    padding: 1.7em 1.4em;
+    margin-bottom: 26px;
+    border: 1px solid #e0e8f0;
+    border-radius: 15px;
+    box-shadow: 0 4px 24px rgba(79, 140, 255, 0.07);
+    transition: box-shadow 0.2s;
+    position: relative;
+}
+
+.post:hover {
+    box-shadow: 0 8px 32px rgba(79, 140, 255, 0.14);
+}
+
+.post h2 {
+    margin-top: 0;
+    margin-bottom: 0.2em;
+    font-size: 1.4em;
+    color: #2954a8;
+}
+
+.post a {
+    text-decoration: none;
+    color: #337ab7;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.post a:hover {
+    color: #18396c;
+}
+
+.post p {
+    margin: 0.6em 0;
+    line-height: 1.6;
+}
+
+.post p:last-child {
+    font-size: 0.94em;
+    color: #919bb3;
+}
+
+.sidebar {
+    flex-basis: 30%;
+    padding: 1.2em 1em;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(79,140,255,0.06);
+    height: fit-content;
+    min-width: 180px;
+}
+
+.sidebar h2 {
+    font-size: 1.18em;
+    color: #2954a8;
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 14px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #2954a8;
+    font-weight: 500;
+    padding: 4px 0;
+    transition: color 0.2s;
+}
+
+.sidebar a:hover {
+    color: #4F8CFF;
+    text-decoration: underline;
+}
+
+footer {
+    background: #235390;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 1.02em;
+    margin-top: 2em;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+        padding: 1em 2vw;
+    }
+    .blog-posts, .sidebar {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+    .sidebar {
+        margin-top: 2em;
+    }
+}
+
+@media (max-width: 600px) {
+    header nav ul li {
+        display: block;
+        margin: 0.8em 0;
+    }
+    main {
+        padding: 0.5em 2vw;
+    }
+    .sidebar {
+        padding: 1em 0.5em;
+    }
+    .post {
+        padding: 1.2em 0.7em;
+    }
+}
