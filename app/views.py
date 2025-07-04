@@ -5,6 +5,8 @@ from django.views import View
 from django.contrib.auth.models import User
 from app.models import BlogPost
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from app.forms import UpdatePostForm
+from django.views.generic.edit import UpdateView
 
 
 # Create your views here.
@@ -30,8 +32,15 @@ class ProfileView(LoginRequiredMixin, View):
         user = request.user
         profile = user.profile
         return render(request, self.template_name, {
-            "user":user,
+            "user":user,    
             "profile": profile
         })
   
+
+class PostUpdate(UpdateView):
+    model = BlogPost
+    form_class = UpdatePostForm
+    template_name = 'app/post_update.html'
+    
+    
 

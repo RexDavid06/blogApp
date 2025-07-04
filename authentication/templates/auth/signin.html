@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signin</title>
-</head>
+{% extends 'app/home.html' %}
+
+{% block body %}
 <body>
     <marquee behavior="" direction="">Welcome to the signin page</marquee>
     <form action="" method="post">
@@ -14,4 +10,4 @@
     </form>
         <h3>Don't  have an account? <a href="{% url 'authentication:signup'%}">SignUp</a></h3>
 </body>
-</html>
+{% endblock %}

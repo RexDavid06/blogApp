@@ -5,7 +5,10 @@
             <p>{{post.post_desc}}</p>
             <p>{{post.date_posted}}</p>
             <p>{{post.posted_by}}</p>
-            </article>
+            {% if user == post.posted_by %}
+            <a href="{% url 'app:post_update' post.pk%}">Edit</a>
+            {% endif %}
+             </article>
 
             <a href="{% url 'app:home' %}">View all post</a>
            
